@@ -1,0 +1,39 @@
+A new verification link has been sent to the email address you provided during registration.
+A new verification link has been sent to your email address.
+Already registered?
+Apellido
+Are you sure you want to delete your account?
+Cancel
+Click here to re-send the verification email.
+Confirm
+Confirm Password
+Current Password
+Dashboard
+Delete Account
+DNI
+Email
+Email Password Reset Link
+Ensure your account is using a long, random password to stay secure.
+Fecha de Nacimiento
+Forgot your password?
+Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.
+Log in
+Log Out
+Name
+New Password
+Nombre
+Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.
+Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.
+Password
+Profile
+Profile Information
+Register
+Remember me
+Resend Verification Email
+Reset Password
+Save
+Saved.
+Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.
+This is a secure area of the application. Please confirm your password before continuing.
+Update Password
+Your email address is unverified.
