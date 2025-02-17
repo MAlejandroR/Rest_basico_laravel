@@ -21,8 +21,16 @@ class UpdateAlumnoRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
             //
-        ];
+             return [
+                 "idioma" => "required|array",
+                 "idioma.*" => "string",
+                 "nivel" => "required|array",
+                 "nivel.*" => "in:Basico,Medio,Alto,Bilingüe",
+                 "titutlo" => "required|array",
+                 'titulo.*' => 'nullable|in:A1,A2,B1,B2,C1,C2', // Puede ser nulo o los valores permitidos
+
+                 //
+             ];
     }
 }

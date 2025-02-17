@@ -12,7 +12,6 @@ class LanguageController extends Controller
     public function __invoke(Request $request, $locale)
     {
         // Verificar si el idioma está disponible
-        info("01 Controlador recibida  variable de sesion $locale");
         $available_locales = config("languages");
         if (array_key_exists($locale, $available_locales)) {
             session()->put('locale', $locale);

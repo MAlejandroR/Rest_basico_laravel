@@ -21,17 +21,14 @@ class LanguageMiddleware
     public function handle(Request $request, Closure $next): Response
     {
 
-        info ("03 En middleware variable de sesion ", session()->all());
 
         if (session()->has('locale')) {
             $locale=session('locale');
             App::setLocale($locale);
-            Log::info("Idioma cargado correctamente desde sesión: " . $locale);
         } else {
             $locale=config('app.locale', 'es'); // Idioma predeterminado si no existe en sesión
             session()->put('locale', $locale);
-            session()->save(); // Guardar la sesión después de actualizarla
-            Log::info("Idioma no encontrado en sesión, se asigna: " . $locale);
+//            session()->save(); // Guardar la sesión después de actualizarla
         }
 
         return $next($request);
