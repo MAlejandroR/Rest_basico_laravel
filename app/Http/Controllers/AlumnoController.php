@@ -44,15 +44,13 @@ class AlumnoController extends Controller
         $alumno = new Alumno ($datos);
         $alumno->save();
         if ($request->has('idiomas'))
-            foreach ($request->idiomas as $idioma_hablado) {
-                info("Guardando $idioma_hablado");
-                $idioma=new Idioma ();
-                $idioma->alumno_id=$alumno->id;
-                $idioma->idioma=$idioma_hablado;
-                $idioma->titulo=$request->titulo[$idioma_hablado];
-                $idioma->nivel=$request->nivel[$idioma_hablado];
-                $idioma->save();
-            }
+            collect($request->idiomas)->each(fn ($idioma)=>
+                Idioma::create([
+                    $alumno->id,
+                    $idioma,
+                    $request->titulo[$idioma],
+                    $request->nivel[$idioma]])
+                );
         session()->flash("mensaje", "Alumno creado con ");
         return redirect()->route('alumnos.index');
 

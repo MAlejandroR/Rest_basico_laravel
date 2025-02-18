@@ -52,8 +52,9 @@
                         <div x-data="{ idiomas: {} }">
                         @foreach(config("idiomas") as $idioma)
                             <div class="flex items-center gap-3 border-b py-2">
-                                <input type="checkbox" name="idiomas[]" id="idioma_{{$loop->index}}" value="{{$idioma}}" x-model="idiomas['{{$idioma}}']"
-                                >
+                                <input type="checkbox" name="idiomas[]" id="idioma_{{$loop->index}}"
+                                       value="{{$idioma}}" x-model="idiomas['{{$idioma}}']"
+                                    {{ in_array($idioma, old('idiomas', [])) ? 'checked' : '' }}>
                                 <label for="idioma_{{$loop->index}}" class="flex-grow">{{$idioma}}</label>
                                 <template x-if="idiomas['{{$idioma}}']">
                                     <div>
