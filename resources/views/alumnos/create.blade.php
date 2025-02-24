@@ -81,10 +81,8 @@
                 <!-- Botones -->
                 <hr class="h-1 bg-green-800 rounded-sm m-3 ">
 
-
                 <input class="btn btn-success" type="submit" value="Guardar">
                 <a href="{{route("alumnos.index")}}" class="btn btn-success"> Volver </a>
-
 
             </form>
 

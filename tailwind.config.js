@@ -13,6 +13,7 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                cocobubble:['"CocoBubble"',"sans-serif"],
             },
             colors:{
                 'header':"#BE0F34",

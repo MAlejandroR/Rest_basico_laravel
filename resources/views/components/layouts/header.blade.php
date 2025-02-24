@@ -2,7 +2,7 @@
 flex flex-row justify-center justify-between px-3 items-center
 ">
     <img width="150px" class="max-h-full p-5" src="{{asset ("images/logo.png")}}" alt="logo">
-    <h1 class="hidden md:block text-gray-700 text-7xl">{{__("Gestion de instituto")}}</h1>
+    <h1 class="hidden  font-cocobubble md:block text-gray-700 text-7xl">{{__("Gestion de instituto")}}</h1>
 
 
     {{--    Para móviles menú hamburguesa--}}
