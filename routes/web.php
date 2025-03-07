@@ -1,5 +1,9 @@
 <?php
 
+require_once base_path('app/Http/Swagger.php');
+require_once base_path('app/Http/Controllers/Swagger.php');
+
+
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -23,5 +27,5 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::resource("/alumnos", AlumnoController::class);
+Route::resource("/alumnos", AlumnoController::class)->middleware("auth");
 Route::get('language/{locale}', LanguageController::class)->name('language');

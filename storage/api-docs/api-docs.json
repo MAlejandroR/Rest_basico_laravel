@@ -1,0 +1,78 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Api de Alumnos",
+        "description": "Interactuar con los Alumnos de nuestra aplicación",
+        "contact": {
+            "email": "manuelromeromiguel@gmail.com"
+        },
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/license/mit"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/alumnos": {
+            "get": {
+                "tags": [
+                    "Alumnos"
+                ],
+                "summary": "Obtener todos los alumnos",
+                "operationId": "getAllStudents",
+                "responses": {
+                    "200": {
+                        "description": "Éxito",
+                        "content": {
+                            "application/vnd.api+json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Alumno"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Alumno": {
+                "required": [
+                    "id",
+                    "name",
+                    "email"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "name": {
+                        "type": "string",
+                        "example": "Juan Pérez"
+                    },
+                    "email": {
+                        "type": "string",
+                        "example": "juan@example.com"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Alumnos",
+            "description": "Alumnos"
+        }
+    ],
+    "security": [
+        {
+            "bearerAuth": []
+        }
+    ]
+}

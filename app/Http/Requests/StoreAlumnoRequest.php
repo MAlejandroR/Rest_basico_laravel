@@ -38,6 +38,7 @@ class StoreAlumnoRequest extends FormRequest
     public function messages(): array{
         return [
             'nombre.required' => 'El nombre es obligatorio.',
+            'nombre.max:50' => 'Nombre excede 50 caracteres.',
             'apellido.required' => 'El apellido es obligatorio.',
             'dni.required' => 'El DNI es obligatorio.',
             'dni.regex' => 'El DNI debe tener el formato 8 números, guion y una letra mayúscula (Ej: 12345678-A).',

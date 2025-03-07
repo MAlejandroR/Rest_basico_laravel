@@ -26,8 +26,9 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function (Exceptions $exceptions) {
         $exceptions->render(fn(QueryException $e) => handleDatabaseError($e)); // ← Corregido
-        $exceptions->render(fn(JsonException $e) => handleValidationError($e));
-    });
+        $exceptions->render(fn(ValidationException $e) => handleValidationError($e));
+    })
+    ->create();
 
 // Función global para manejar errores de base de datos
 function handleDatabaseError(QueryException $e)
@@ -41,7 +42,7 @@ function handleDatabaseError(QueryException $e)
     ], 500); // ← Corregido, 500 va afuera del array
 }
 // Método para manejar errores de validación
-function handleValidationError(JsonException $e)
+function handleValidationError(ValidationException $e)
 {
     return response()->json([
         'errors' => collect($e->errors())->map(function ($message, $field) {
